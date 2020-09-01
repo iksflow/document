@@ -33,3 +33,12 @@ drwxrwxr-x.  2 iksflow iksflow 4096 Aug 19 12:30 process
 -rw-rw-r--.  1 iksflow iksflow 2173 Aug 25 09:04 user.txt
 
 ```
+
+### touch
+파일을 생성한다
+### rm
+파일을 삭제한다.
+### cp
+파일을 복사한다.
+### mv 
+파일을 이동한다.
