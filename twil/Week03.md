@@ -1,11 +1,20 @@
 # Rails로 간단한 게시판을 만들어보자 - 모델 1편
 
 ## 1. Rails의 모델은 어떤 역할을 하는가?
-Model
+모델은 비즈니스로직과 이를 수행하는데 필요한 여러가지 로직들이 정의되는 공간이다.  
+대표적으로 DB에서 데이터를 읽고 쓰는것이 있다.  
+이밖에도 데이터의 유효성검사, 모델간의 관계 설정 등을 담당한다.  
+
+<br></br>
+
 
 ## 2. ORM 그리고 ActiveRecord
-`ORM`은 객체 관계 매핑이라는 패러다임이다.  
-`ActiveRecord`는 Rails에서 ORM을 구현하기 위해 사용되는 구현체라고
+`ORM`은 객체와 관계형 데이터베이스의 데이터를 매핑해주는 기술을 말한다.  
+`ActiveRecord`는 Rails에서 ORM을 구현하기 위해 사용되는 구현체이다.  Java의 `JPA`와 `Hibernate`의 관계와 같다.  
+ORM과 관련된 자세한 내용은 검색해보면 많이 나오는 관계로 생략하겠다.  
+
+<br></br>
+
 
 ## 3. 모델을 생성하는 방법
 ```sh
@@ -31,6 +40,9 @@ Running via Spring preloader in process 44409
 ```
 총 4개의 파일이 생성되었다는 메시지를 확인할 수 있는데, 기능 구현에 필요한 파일은 `모델 파일(post.rb)`과 `마이그레이션 파일(20210723132121_create_posts.rb)`이다.  
 
+<br></br>
+
+
 ### 3.1 모델 파일
 ```rb
 class Post < ActiveRecord::Base
@@ -41,6 +53,9 @@ end
 그래서 `Post.title`처럼 값을 불러오는 것이 가능하다.
 나중에는 모델간의 관계, 유효성 검사로직, 비즈니스 로직 등의 내용을 작성할 떄 사용된다.
 구체적인 사용법은 나중에 CRUD 관련된 내용을 설명할 때 다룰 생각이다.  
+
+<br></br>
+
 
 ### 3.2 마이그레이션 파일
 ```rb
@@ -66,7 +81,7 @@ A테이블을 먼저 생성하고 B를 생성하는건 자연스럽기 때문이
 `20210723_B.rb`파일을 실행하는 시점에는 의존할 테이블인 A를 찾을 수 없기 때문이다.  
 간단히  위해서 `change` 라는 메서드의 내용
 
-
+<br></br>
 
 
 ## 4. DB에 반영하기
@@ -94,7 +109,14 @@ ActiveRecord::Schema.define(version: 20210723132121) do
 end
 ```
 
-## 5. 마치며
+`rake db:migrate` 명령을 실행하면 위와 같은 내용의 `schema.rb`파일이 생성된다.  
+실제로 DB에 관한 내용을 처리할 때는 schema.rb의 내용을 기반으로 작업을 수행하게 된다.  
+간혹 마이그레이션 파일의 내용을 수정하고 `rake db:migrate` 명령을 실행했음에도 테이블에 변화가 없는 경우가 있었다.  
+이런 경우 `schema.rb` 파일에 수정한 내용이 반영되어있지 않았을 가능성이 크다.  
+`rake db:migrate:reset` 명령어를 실행하면 `schema.rb`를 다시 생성하므로 문제를 해결할 수 있다.
+
+<br></br>
+
 
 ## Reference
 https://guides.rubyonrails.org/v4.1/getting_started.html
