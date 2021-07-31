@@ -10,7 +10,8 @@
 
 ## 2. ORM 그리고 ActiveRecord
 `ORM`은 객체와 관계형 데이터베이스의 데이터를 매핑해주는 기술을 말한다.  
-`ActiveRecord`는 Rails에서 ORM을 구현하기 위해 사용되는 구현체이다.  Java의 `JPA`와 `Hibernate`의 관계와 같다.  
+`ActiveRecord`는 Rails에서 ORM을 구현하기 위해 사용되는 구현체이다.  
+Java의 `JPA`와 `Hibernate`의 관계와 같다.  
 ORM과 관련된 자세한 내용은 검색해보면 많이 나오는 관계로 생략하겠다.  
 
 <br></br>
