@@ -140,5 +140,8 @@ Post 객체를 생성하고 매핑되는 테이블에 데이터를 저장하는 
 ## 마무리
 간단하게 CRUD 로직을 구현하는 방법에 대해서 알아보았다.  
 다음에는 실제로 View와 연동해 값이 어떻게 이동하고 입력받는지 살펴볼 계획이다.
+
+<br></br>
+
 ## Reference
 https://guides.rubyonrails.org/v4.1/getting_started.html
