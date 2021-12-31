@@ -5,6 +5,20 @@ class Foo
     def initialize
         puts "Foo is created."
     end
+
+    # 클래스 메서드
+    def self.foo_class_method
+
+    end
+
+    class << self
+    end
+
+    
+
+    # 인스턴스 메서드
+    def foo_instance_method
+    end
 end
 ```
 ## 2. 모듈
